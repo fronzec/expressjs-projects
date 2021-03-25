@@ -1,5 +1,12 @@
 # TODO service
 
+## Pending Issues
+- When we run our app with docker-compose the app start faster than the databas, we need a way to wait until the db is ready
+- Find a way to load the environment variables from .env file when we run the dev npm script.
+- Search if we could improve more the docker build
+- Search if run the db migration on startup is correct
+- Search if we can remove babel, actually we are not using it by some issues
+
 ## Sequelize
 We are using 
 https://sequelize.org as ORM
