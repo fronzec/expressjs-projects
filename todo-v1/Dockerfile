@@ -24,7 +24,7 @@ COPY . .
 EXPOSE ${PORT}
 
 # Run development server
-ENTRYPOINT ["node", "index.js"]
+ENTRYPOINT ["npm", "start"]
 
 
 

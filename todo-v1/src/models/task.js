@@ -21,7 +21,10 @@ export default (sequelize, DataTypes) => {
     Task.init({
         title: DataTypes.STRING,
         description: DataTypes.STRING,
-        status: DataTypes.STRING,
+        status: {
+            type: Sequelize.ENUM,
+            values: ['DONE', 'PENDING']
+        },
         created_at: DataTypes.DATE,
         updated_at: DataTypes.DATE
     }, {

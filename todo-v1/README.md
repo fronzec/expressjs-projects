@@ -9,5 +9,5 @@ https://sequelize.org as ORM
 - Now we have our basic skeleton
 
 ### Migrations
-- Create a model and migration `npx sequelize model:generate --name Task --attributes title:string,description:string,status:string,created_at:date,updated_at:date`
-- Run migrations: `npx db:migrate`
+- Create a model and migration `npx sequelize model:generate --name Task --attributes title:string,description:string,status:string`
+- Run migrations: `npx sequelize db:migrate`
