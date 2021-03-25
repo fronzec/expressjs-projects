@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "setupdev": "npx sequelize db:migrate",
-    "dev": "npx nodemon -r dotenv/config src/index.js dotenv_config_path=./devEnv/.env",
-    "start": "npm install && npx sequelize db:migrate && node ./src/index.js"
+    "dev": "npm run setupdev && npx nodemon -r dotenv/config src/index.js dotenv_config_path=./devEnv/.env",
+    "start": "npx sequelize db:migrate && node ./src/index.js"
   },
   "author": "fronzec",
   "license": "MIT",

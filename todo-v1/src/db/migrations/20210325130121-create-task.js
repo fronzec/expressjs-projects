@@ -12,7 +12,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       description: {
-        type: Sequelize.ENUM('DONE','PENDING'),
+        type: Sequelize.TEXT,
         allowNull: false
       },
       status: {

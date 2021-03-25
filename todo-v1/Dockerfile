@@ -18,7 +18,7 @@ COPY package*.json ./
 RUN npm ci --only=production
 
 # Copy the rest of the code
-COPY ./build .
+COPY . .
 
 # Open desired port
 EXPOSE ${PORT}

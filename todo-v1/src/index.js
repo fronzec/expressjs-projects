@@ -13,5 +13,5 @@ app.use(express.json());
 route(app);
 
 app.listen(port, () => {
-    console.log('Service started in port', port);
+    console.log('------>Service started in port', port);
 });

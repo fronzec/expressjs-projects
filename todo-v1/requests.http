@@ -1,2 +1,12 @@
 ### Get all todos
 GET http://localhost:3000/api/todos
+
+### Create a task
+POST http://localhost:3000/api/todos
+Content-Type: application/json
+
+{
+  "title": "the title",
+  "description": "the description",
+  "status": "PENDING"
+}
