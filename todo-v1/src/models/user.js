@@ -2,8 +2,21 @@ import {
     Model
 } from 'sequelize';
 
+const PROTECTED_ATTRIBUTES = ['password'];
+
 export default (sequelize, DataTypes) => {
     class User extends Model {
+
+        toJSON() {
+            // Hide protected fields
+            const attributes = {...this.get()};
+            // eslint-disable-next-line no-restricted-syntax
+            for (const a of PROTECTED_ATTRIBUTES) {
+                delete attributes[a];
+            }
+            return attributes;
+        }
+
         /**
          * Helper method for defining associations.
          * This method is not a part of Sequelize lifecycle.
@@ -15,8 +28,18 @@ export default (sequelize, DataTypes) => {
     };
     User.init({
         name: DataTypes.STRING,
-        email: DataTypes.STRING,
-        phone: DataTypes.STRING,
+        email: {
+            type: DataTypes.STRING,
+            allowNull: {args: false, msg: 'Please enter your address'},
+            unique: {args: true, msg: 'Email already exists'},
+            validate: {
+                isEmail: {
+                    args: true,
+                    msg: 'Please enter a valid email addresss',
+                }
+            }
+        },
+        phone: {type: DataTypes.STRING, unique: true},
         password: DataTypes.STRING,
         status: DataTypes.STRING,
         last_login_at: DataTypes.DATE,
