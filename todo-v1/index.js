@@ -1,7 +1,7 @@
-const express = require('express');
+import express from 'express';
 
 //TODO move to a fixture or something similar
-const todos =  [
+const todos = [
     {
         id: 1,
         description: "Awesome task",
@@ -20,5 +20,5 @@ app.get('/api/todos', (req, res) => {
 });
 
 app.listen(port, () => {
-    console.info(`Service started in port ${port}`);
+    console.log('Service started in port', port);
 });
