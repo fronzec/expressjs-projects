@@ -15,10 +15,10 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install the libraries as user node
-RUN npm i --only=production
+RUN npm ci --only=production
 
 # Copy the rest of the code
-COPY . .
+COPY ./build .
 
 # Open desired port
 EXPOSE ${PORT}

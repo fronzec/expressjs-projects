@@ -1,8 +1,8 @@
-import {
+'use strict';
+const {
     Model
-} from 'sequelize';
-
-export default (sequelize, DataTypes) => {
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
     class Task extends Model {
 
         toJSON() {
@@ -21,12 +21,7 @@ export default (sequelize, DataTypes) => {
     Task.init({
         title: DataTypes.STRING,
         description: DataTypes.STRING,
-        status: {
-            type: Sequelize.ENUM,
-            values: ['DONE', 'PENDING']
-        },
-        created_at: DataTypes.DATE,
-        updated_at: DataTypes.DATE
+        status: DataTypes.STRING
     }, {
         sequelize,
         modelName: 'Task',

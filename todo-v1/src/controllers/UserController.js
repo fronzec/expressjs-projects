@@ -1,9 +1,9 @@
-import {Op} from 'sequelize';
-import model from '../models';
+const {Op} = require('sequelize');
+const model = require('../models');
 
 const {User} = model;
 
-export default {
+module.exports = {
     async createUser(req, res) {
         const {email, password, name, phone} = req.body;
         try {

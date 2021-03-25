@@ -1,12 +1,11 @@
-import {Op} from 'sequelize';
-import model from '../models';
+const model = require ('../models');
 
 const {Task} = model;
 
 const STATUS_OK = 'DONE';
 const STATUS_PENDING = 'PENDING';
 
-export default {
+module.exports = {
     async createTask(req, res) {
         const {title, description} = req.body;
         const status = STATUS_PENDING;

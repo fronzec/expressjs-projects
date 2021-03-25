@@ -1,6 +1,6 @@
-import TaskController from '../controllers/TodosController'
+const TaskController = require('../controllers/TodosController');
 
-export default (app) => {
+module.exports = (app) => {
     // POST allow create a task aka TODO
     app.post('/api/todos', TaskController.createTask);
 

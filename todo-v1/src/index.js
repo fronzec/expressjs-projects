@@ -1,5 +1,5 @@
-import express from 'express';
-import route from './src/routes'
+const express = require ('express');
+const route = require ('./routes');
 
 // Setup our app
 const app = express();
