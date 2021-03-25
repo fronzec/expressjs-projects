@@ -1,0 +1,18 @@
+version: '3.7'
+services:
+  app:
+    build:
+      context: ..
+    ports:
+      - "3000:3000"
+  db:
+    image: postgres:9.6
+    ports:
+      - "5432:5432"
+    env_file:
+      - .env
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
+      POSTGRES_DB: ${DB_NAME}
+      PGDATA: /tmp
