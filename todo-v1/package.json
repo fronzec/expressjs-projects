@@ -4,7 +4,7 @@
   "description": "TODO API with ExpressJs",
   "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "setupdev": "npx sequelize db:migrate",
     "dev": "npm run setupdev && npx nodemon -r dotenv/config src/index.js dotenv_config_path=./devEnv/.env",
     "start": "npx sequelize db:migrate && node ./src/index.js"
@@ -27,6 +27,8 @@
   },
   "devDependencies": {
     "dotenv": "^8.2.0",
-    "nodemon": "2.0.7"
+    "jest": "^26.6.3",
+    "nodemon": "2.0.7",
+    "supertest": "^6.1.3"
   }
 }
