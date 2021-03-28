@@ -28,5 +28,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
+    - name: Install dependencies
+      # npm ci is faster than npm install
+      run: npm ci
     - name: Run tests
       run: npm test
