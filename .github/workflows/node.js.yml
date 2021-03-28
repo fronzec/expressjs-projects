@@ -10,8 +10,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
-
+  todo-v1-job:
     runs-on: ubuntu-latest
     defaults:
       run:
