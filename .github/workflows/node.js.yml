@@ -10,13 +10,15 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
-
+  todo-v1-job:
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        # Our default directory to work for all steps of this job
+        working-directory: ./todo-v1
     strategy:
       matrix:
-        node-version: [10.x, 12.x, 14.x, 15.x]
+        node-version: [12.x, 14.x]
         # See supported Node.js release schedule at https://nodejs.org/en/about/releases/
 
     steps:
@@ -25,5 +27,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: cd todo-v1/
-    - run: npm test
+    - name: Install dependencies
+      # npm ci is faster than npm install
+      run: npm ci
+    - name: Run tests
+      run: npm test
