@@ -5,8 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "test": "jest",
-    "setupdev": "npx sequelize db:migrate",
-    "dev": "npm run setupdev && npx nodemon -r dotenv/config src/index.js dotenv_config_path=./devEnv/.env",
+    "setuplocal": "ENVIRONMENT=islocal npx sequelize db:migrate",
+    "dev": "npm run setuploca && npx nodemon -r dotenv/config src/index.js dotenv_config_path=./devEnv/.env",
     "start": "npx sequelize db:migrate && node ./src/index.js"
   },
   "author": "fronzec",
